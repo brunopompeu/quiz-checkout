@@ -12,8 +12,8 @@ export default function BusinessCase() {
             Recuperando receita perdida<br />no abandono de checkout
           </h1>
           <p className="text-white/70 text-lg max-w-2xl">
-            Em 2026, 92,6% das tentativas de compra na Eduzz são abandonadas antes de concluir o pagamento.
-            O Quiz no Checkout é a intervenção que transforma esse abandono em oportunidade.
+            Entre janeiro e junho de 2026, 1,31 milhão de compradores preencheram seus dados no checkout
+            da Eduzz e abandonaram antes de pagar. São compradores de alta intenção, já identificados — e recuperáveis.
           </p>
         </div>
       </div>
@@ -22,21 +22,20 @@ export default function BusinessCase() {
       <div className="bg-slate-900 text-white py-10 px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">
-            Dados internos — Databricks · Jan–Jul 2026
+            Dados internos — Databricks · Jan–Jun 2026
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Kpi label="Taxa de abandono" value="92,6%" sub="média 2026" highlight />
-            <Kpi label="Transações abandonadas" value="4,42M" sub="de 4,78M totais" />
-            <Kpi label="Ticket médio abandonado" value="R$ 174,65" sub="por transação" />
-            <Kpi label="Abandonos / mês" value="631.648" sub="média mensal" />
+            <Kpi label="Taxa de abandono" value="15,98%" sub="do total que preencheu dados" highlight />
+            <Kpi label="Total interagiram" value="8,17M" sub="compradores no período" />
+            <Kpi label="Ticket médio abandonado" value="R$ 227,62" sub="por transação" />
+            <Kpi label="Abandonos / mês" value="~218K" sub="média mensal (1,31M ÷ 6)" />
           </div>
 
           <div className="mt-6 border-t border-slate-700 pt-6">
             <p className="text-slate-400 text-sm leading-relaxed">
-              A taxa de abandono cresceu de{' '}
-              <span className="text-white font-semibold">90,15% em janeiro</span> para{' '}
-              <span className="text-red-400 font-semibold">97,59% em julho</span> (parcial), com tendência de
-              aceleração. O ticket médio de abandono variou entre R$ 159,82 e R$ 182,61.
+              <span className="text-white font-semibold">Critério de abandono:</span>{' '}
+              comprador que preencheu dados básicos (nome, documento, e-mail) no checkout mas não concluiu
+              a compra nem tentou pagar. Total de 1,31 milhão de abandonos no período.
             </p>
           </div>
         </div>
@@ -47,15 +46,15 @@ export default function BusinessCase() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
           <div>
             <p className="text-xs font-semibold text-eduzz-alertRed uppercase tracking-widest mb-1">Receita em risco</p>
-            <p className="text-3xl font-bold text-eduzz-textDark">R$ 110,3 M<span className="text-lg font-normal text-slate-500">/mês</span></p>
+            <p className="text-3xl font-bold text-eduzz-textDark">R$ 49,7 M<span className="text-lg font-normal text-slate-500">/mês</span></p>
             <p className="text-sm text-slate-500 mt-1">
-              631.648 abandonos × R$ 174,65 = receita potencial não convertida
+              ~218.333 abandonos/mês × R$ 227,62 = receita potencial não convertida
             </p>
           </div>
           <div className="flex gap-4">
-            <RecoveryCard pct="2%" value="R$ 2,2M" color="bg-amber-100 text-amber-800" />
-            <RecoveryCard pct="5%" value="R$ 5,5M" color="bg-emerald-100 text-emerald-800" />
-            <RecoveryCard pct="10%" value="R$ 11M" color="bg-eduzz-blue text-white" />
+            <RecoveryCard pct="2%" value="R$ 994K" color="bg-amber-100 text-amber-800" />
+            <RecoveryCard pct="5%" value="R$ 2,5M" color="bg-emerald-100 text-emerald-800" />
+            <RecoveryCard pct="10%" value="R$ 5M" color="bg-eduzz-blue text-white" />
           </div>
         </div>
       </div>
@@ -131,48 +130,45 @@ export default function BusinessCase() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                <ImpactRow label="Conservador" pct="2%" txn="12.633" rev="R$ 2,2M" />
-                <ImpactRow label="Base" pct="5%" txn="31.582" rev="R$ 5,5M" highlight />
-                <ImpactRow label="Otimista" pct="10%" txn="63.165" rev="R$ 11M" />
+                <ImpactRow label="Conservador" pct="2%" txn="4.367" rev="R$ 994K" />
+                <ImpactRow label="Base" pct="5%" txn="10.917" rev="R$ 2,5M" highlight />
+                <ImpactRow label="Otimista" pct="10%" txn="21.833" rev="R$ 5M" />
               </tbody>
             </table>
           </div>
           <p className="text-xs text-slate-400 mt-3">
-            * Baseado em 631.648 abandonos/mês com ticket médio de R$ 174,65. Percentual incide sobre abandonos
-            interceptados pelo quiz (exit-intent + inatividade), estimados em ~40–60% do total.
+            * Baseado em ~218.333 abandonos/mês (média de 1,31M ÷ 6) com ticket médio de R$ 227,62.
+            Percentual incide sobre o total de abandonos interceptáveis pelo quiz.
           </p>
         </Section>
 
-        {/* Why now */}
-        <Section icon="⏱️" label="Por que agora?" title="A taxa de abandono está acelerando">
-          <p className="text-slate-600 leading-relaxed mb-4">
-            A taxa de abandono saiu de 90,15% em janeiro para 97,59% em julho — uma deterioração de 7,4 pontos
-            percentuais em sete meses. A cada mês sem intervenção, mais receita é perdida de forma permanente.
+        {/* Why this audience */}
+        <Section icon="🎯" label="Por que esse público?" title="Alta intenção, já identificado, ainda recuperável">
+          <p className="text-slate-600 leading-relaxed mb-8">
+            Diferente de quem saiu da página de vendas sem agir, o comprador que abandona após preencher dados
+            demonstrou intenção real de compra. Ele se identificou, entrou no checkout e parou a um passo do pagamento.
+            Esse é o público de maior ROI para uma intervenção conversacional.
           </p>
-          <div className="grid grid-cols-7 gap-1 items-end h-24 mt-6">
-            {[
-              { month: 'Jan', pct: 90.15 },
-              { month: 'Fev', pct: 91.2 },
-              { month: 'Mar', pct: 92.4 },
-              { month: 'Abr', pct: 93.1 },
-              { month: 'Mai', pct: 94.8 },
-              { month: 'Jun', pct: 96.2 },
-              { month: 'Jul', pct: 97.59, partial: true },
-            ].map(({ month, pct, partial }) => {
-              const h = Math.round(((pct - 88) / 12) * 100)
-              return (
-                <div key={month} className="flex flex-col items-center gap-1">
-                  <span className="text-xs font-semibold text-eduzz-textDark">{pct.toFixed(1)}%</span>
-                  <div
-                    className={`w-full rounded-t transition-all ${partial ? 'bg-eduzz-alertRed/60' : 'bg-eduzz-blue'}`}
-                    style={{ height: `${h}%` }}
-                  />
-                  <span className="text-xs text-slate-400">{month}{partial ? '*' : ''}</span>
-                </div>
-              )
-            })}
+
+          {/* Funnel */}
+          <div className="space-y-2 max-w-xl">
+            <FunnelBar label="Interagiram com o checkout" value="8,17M" pct={100} color="bg-eduzz-blue" />
+            <FunnelBar label="Concluíram a compra (84,02%)" value="6,86M" pct={84} color="bg-emerald-500" />
+            <FunnelBar
+              label="Preencheram dados e abandonaram (15,98%)"
+              value="1,31M"
+              pct={16}
+              color="bg-eduzz-alertRed"
+              highlight
+            />
           </div>
-          <p className="text-xs text-slate-400 mt-2">* Julho parcial</p>
+          <p className="text-xs text-slate-400 mt-4">Jan–Jun 2026 · Fonte: Databricks</p>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <ProblemCard icon="🪪" title="Já identificado" desc="Preencheu nome, documento e e-mail — é possível reconhecer e personalizar a abordagem." />
+            <ProblemCard icon="⏱️" title="Abandono recente" desc="O checkout ainda está aberto ou foi fechado há poucos segundos — janela ideal para reengajamento." />
+            <ProblemCard icon="💳" title="Um passo do pagamento" desc="Superou a barreira de intenção. O obstáculo restante é cognitivo, não motivacional." />
+          </div>
         </Section>
 
         {/* Footer CTA */}
@@ -248,6 +244,20 @@ function FeatureCard({ icon, title, desc }) {
       <div>
         <p className="text-sm font-semibold text-eduzz-textDark mb-1">{title}</p>
         <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  )
+}
+
+function FunnelBar({ label, value, pct, color, highlight }) {
+  return (
+    <div className={`rounded-xl p-3 border ${highlight ? 'border-red-200 bg-red-50' : 'border-slate-100 bg-slate-50'}`}>
+      <div className="flex justify-between items-center mb-2">
+        <span className={`text-xs font-medium ${highlight ? 'text-eduzz-alertRed' : 'text-slate-600'}`}>{label}</span>
+        <span className={`text-sm font-bold ${highlight ? 'text-eduzz-alertRed' : 'text-eduzz-textDark'}`}>{value}</span>
+      </div>
+      <div className="w-full bg-slate-200 rounded-full h-2">
+        <div className={`${color} h-2 rounded-full`} style={{ width: `${pct}%` }} />
       </div>
     </div>
   )
