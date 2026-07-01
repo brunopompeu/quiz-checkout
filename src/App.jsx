@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PrototipoComprador from './pages/PrototipoComprador'
 import PrototipoProdutor from './pages/PrototipoProdutor'
+import BusinessCase from './pages/BusinessCase'
 
 export default function App() {
   const [view, setView] = useState('produtor')
@@ -25,11 +26,23 @@ export default function App() {
           >
             Protótipo 1 — Comprador
           </button>
+          <div className="w-px bg-slate-200 mx-0.5" />
+          <button
+            onClick={() => setView('bc')}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition flex items-center gap-1.5 ${
+              view === 'bc' ? 'bg-eduzz-yellow text-eduzz-textDark' : 'text-slate-500 hover:text-slate-700'
+            }`}
+          >
+            <span className="text-[10px]">📊</span>
+            Business Case
+          </button>
         </div>
       </div>
 
       <div className="pt-14">
-        {view === 'produtor' ? <PrototipoProdutor /> : <PrototipoComprador />}
+        {view === 'produtor' && <PrototipoProdutor />}
+        {view === 'comprador' && <PrototipoComprador />}
+        {view === 'bc' && <BusinessCase />}
       </div>
     </div>
   )
